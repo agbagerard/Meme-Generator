@@ -1,0 +1,162 @@
+/* root settings */
+:root {
+  --clr-dark: #020617;
+  --clr-light: #f1f5f9;
+  --clr-indigo: #4f46e5;
+  --clr-rose: #d12349;
+}
+
+* {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
+  font-family: 'General Sans', sans-serif;
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-left: 35%;
+}
+
+/* Style the form */
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--clr-indigo);
+  border-radius: 5px;
+}
+
+#input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+input[type='text'],
+input[type='url'] {
+  padding: 8px;
+  border: 1px solid var(--clr-rose);
+  width: 70%;
+}
+
+#button-container {
+  text-align: right;
+  margin-top: 10px;
+}
+
+input[type='button'],
+#reset-button {
+  padding: 10px 20px;
+  background-color: var(--clr-rose);
+  color: #f1f5f9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgb(225, 29, 72, 0.5), 0 6px 6px rgb(225, 29, 72, 0.5),
+    0 0 100px -10px var(--clr-rose);
+  transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+input[type='button']:hover,
+#reset-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgb(225, 29, 72, 0.25),
+    0 10px 10px rgb(225, 29, 72, 0.22), 0 0 120px -10px var(--clr-rose);
+}
+
+/* Style the memes images */
+
+#meme-container {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow memes to wrap to the next line */
+  gap: 20px; /* Space between memes */
+  justify-content: center; /* Center the memes horizontally */
+  margin-top: 20px;
+}
+
+.meme {
+  position: relative; /* For positioning text */
+  width: 250px;
+  height: 250px;
+  border: 1px solid var(--clr-indigo);
+}
+
+.meme img {
+  width: 100%;
+  height: 100%;
+  display: block; /* Prevents a small space below the image */
+}
+
+.top-text,
+.bottom-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  color: var(--clr-light);
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px black; /* Add a text shadow for better readability */
+  padding: 5px;
+  width: 80%; /* Prevent text from overflowing */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.top-text {
+  top: 1px;
+}
+
+.bottom-text {
+  bottom: 40px;
+}
+
+#reset-button {
+  display: none; /* Initially hide the button */
+}
+
+.delete-button {
+  position: absolute; /* Position it relative to the meme */
+  top: 10px; /* Adjust vertical position */
+  right: 10px; /* Position on the right edge */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  color: var(--clr-light);
+  border: none;
+  border-radius: 50%; /* Make it circular */
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px; /* Vertically center the "x" */
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1; /* Ensure it's on top of the image */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.meme:hover .delete-button {
+  opacity: 1; /* Show on hover */
+}
+
+.delete-button:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+}
+
+.delete-button:focus {
+  /* Remove default outline */
+  outline: none;
+}

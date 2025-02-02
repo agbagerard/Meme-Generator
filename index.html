@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Meme Generator</title>
+  </head>
+  <body>
+    <h1>MEME GENERATOR</h1>
+    <form id="form-container">
+      <div id="input-container">
+        <label for="img">Image URL</label>
+        <input
+          type="url"
+          id="img"
+          placeholder="What's the URL for your meme image?"
+        />
+      </div>
+
+      <div id="input-container">
+        <label for="top-text">Text On Top</label>
+        <input
+          type="text"
+          id="top-text"
+          placeholder="What text do you want at the top of the meme?"
+        />
+      </div>
+
+      <div id="input-container">
+        <label for="bottom-text">Text On Bottom</label>
+        <input
+          type="text"
+          id="bottom-text"
+          placeholder="What text do you want at the bottom of the meme?"
+        />
+      </div>
+      <div id="button-container">
+        <input id="create-meme" type="button" value="Add Meme" />
+      </div>
+    </form>
+    <div id="meme-container">
+      <!-- The meme will appear here -->
+    </div>
+  </body>
+</html>
